@@ -1,12 +1,4 @@
-import importlib.util
-from pathlib import Path
-
-
-_BST_PATH = Path(__file__).resolve().parents[1] / "src" / "data-structures" / "bst.py"
-_BST_SPEC = importlib.util.spec_from_file_location("bst_module", _BST_PATH)
-_BST_MODULE = importlib.util.module_from_spec(_BST_SPEC)
-_BST_SPEC.loader.exec_module(_BST_MODULE)
-BinarySearchTree = _BST_MODULE.BinarySearchTree
+from src.data_structures.bst import BinarySearchTree
 
 
 def test_insert_builds_tree_and_sets_parent_links():
